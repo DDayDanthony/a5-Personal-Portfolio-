@@ -5,10 +5,10 @@
 // ===========================================
 
 const SHEET_URLS = {
-  original: "https://docs.google.com/spreadsheets/d/1toERaUUQP4HSnd2gxyFu-aBJFwafB3VO0PnhbY7lHZ0/edit?gid=0#gid=0",
-  fanart: "https://docs.google.com/spreadsheets/d/1toERaUUQP4HSnd2gxyFu-aBJFwafB3VO0PnhbY7lHZ0/edit?gid=1758157628#gid=1758157628",
-  commissions: "https://docs.google.com/spreadsheets/d/1toERaUUQP4HSnd2gxyFu-aBJFwafB3VO0PnhbY7lHZ0/edit?gid=1962887599#gid=1962887599",
-  blog: "https://docs.google.com/spreadsheets/d/1toERaUUQP4HSnd2gxyFu-aBJFwafB3VO0PnhbY7lHZ0/edit?gid=626238044#gid=626238044"
+  original: "https://docs.google.com/spreadsheets/d/e/2PACX-1vRX4ykwKCZBDRz3LuS_S-yHLpMa-BPeSdUcRT5owE2gBfbbBe-vENggIBYtP1RmImgwFwvch9VXw-fr/pub?gid=0&single=true&output=csv",
+  fanart: "https://docs.google.com/spreadsheets/d/e/2PACX-1vRX4ykwKCZBDRz3LuS_S-yHLpMa-BPeSdUcRT5owE2gBfbbBe-vENggIBYtP1RmImgwFwvch9VXw-fr/pub?gid=1758157628&single=true&output=csv",
+  commissions: "https://docs.google.com/spreadsheets/d/e/2PACX-1vRX4ykwKCZBDRz3LuS_S-yHLpMa-BPeSdUcRT5owE2gBfbbBe-vENggIBYtP1RmImgwFwvch9VXw-fr/pub?gid=1962887599&single=true&output=csv",
+  blog: "https://docs.google.com/spreadsheets/d/e/2PACX-1vRX4ykwKCZBDRz3LuS_S-yHLpMa-BPeSdUcRT5owE2gBfbbBe-vENggIBYtP1RmImgwFwvch9VXw-fr/pub?gid=626238044&single=true&output=csv"
 };
 
 // how many items show in the homepage carousel
