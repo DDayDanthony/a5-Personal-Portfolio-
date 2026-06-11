@@ -1,0 +1,244 @@
+/* reset box model so padding doesnt mess up widths */
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  font-family: 'Inter', sans-serif;
+  background: #ffffff;
+  color: #1a1a1a;
+  line-height: 1.5;
+}
+
+/* headings use the display font */
+h1, h2, h3 { font-family: 'Space Grotesk', sans-serif; margin: 0; }
+a { color: inherit; text-decoration: none; }
+
+/* ===== top nav bar ===== */
+.topbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px 40px;
+  border-bottom: 1px solid #e5e3df;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.logo a { font-family: 'Space Grotesk', sans-serif; font-size: 22px; font-weight: 700; letter-spacing: 1px; }
+
+.mainnav { display: flex; gap: 24px; align-items: center; }
+
+.mainnav a {
+  font-weight: 500;
+  font-size: 15px;
+  padding: 6px 4px;
+  border-bottom: 2px solid transparent;
+  transition: border-color 0.15s ease;
+}
+
+.mainnav a:hover { border-bottom: 2px solid #FF6B4A; }
+
+/* ko-fi button - styled different from other nav links */
+.kofi-link {
+  background: #FF6B4A;
+  color: #fff !important;
+  padding: 8px 14px !important;
+  border-radius: 6px;
+  border-bottom: none !important;
+}
+
+.kofi-link:hover { background: #e85a3a; border-bottom: none !important; }
+
+.nsfw-toggle { font-size: 13px; color: #555; }
+.nsfw-toggle label { display: flex; align-items: center; gap: 6px; cursor: pointer; }
+
+/* ===== homepage hero / carousel ===== */
+.hero { padding: 40px; }
+.hero-title { font-size: 28px; margin-bottom: 20px; text-transform: lowercase; }
+
+.carousel { position: relative; display: flex; align-items: center; }
+
+/* the scrolling row of images */
+.carousel-track {
+  display: flex;
+  gap: 16px;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  padding: 10px 0;
+  flex: 1;
+  scrollbar-width: thin;
+}
+
+.carousel-item {
+  flex: 0 0 auto;
+  width: 220px;
+  height: 220px;
+  background: #f7f7f5;
+  border: 1px solid #e5e3df;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  font-size: 13px;
+  color: #999;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+.carousel-item img { width: 100%; height: 100%; object-fit: cover; }
+.carousel-item.placeholder { color: #aaa; font-style: italic; }
+
+/* left/right arrow buttons */
+.carousel-btn {
+  background: #fff;
+  border: 1px solid #e5e3df;
+  border-radius: 50%;
+  width: 36px;
+  height: 36px;
+  font-size: 16px;
+  cursor: pointer;
+  flex-shrink: 0;
+  margin: 0 8px;
+}
+
+.carousel-btn:hover { background: #f0f0f0; }
+
+/* ===== homepage category tiles (Original/FanArt/Commissions) ===== */
+.category-tiles {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  padding: 0 40px 60px 40px;
+}
+
+.tile {
+  border: 1px solid #e5e3df;
+  border-radius: 10px;
+  padding: 16px;
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+.tile:hover { transform: translateY(-4px); box-shadow: 0 6px 18px rgba(0,0,0,0.06); }
+.tile-img { width: 100%; height: 180px; border-radius: 6px; margin-bottom: 12px; }
+
+/* gray dashed box used until real cover images are added */
+.placeholder-img {
+  background: #f7f7f5;
+  border: 1px dashed #ccc;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #aaa;
+  font-size: 13px;
+}
+
+.tile h2 { font-size: 18px; margin-bottom: 6px; }
+.tile p { font-size: 14px; color: #666; margin: 0; }
+
+/* ===== gallery pages (original/fanart/commissions galleries) ===== */
+.gallery-page { padding: 40px; }
+.gallery-page h1 { font-size: 26px; margin-bottom: 8px; }
+.gallery-page .desc { color: #666; margin-bottom: 24px; }
+
+/* responsive grid, auto-fills columns based on screen width */
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 18px;
+}
+
+.gallery-item {
+  border: 1px solid #e5e3df;
+  border-radius: 8px;
+  overflow: hidden;
+  cursor: pointer;
+  background: #f7f7f5;
+}
+
+.gallery-item img { width: 100%; height: 220px; object-fit: cover; display: block; }
+.gallery-item .caption { padding: 8px 10px; font-size: 13px; }
+.gallery-item .caption .title { font-weight: 600; }
+.gallery-item .caption .tags { color: #999; font-size: 12px; }
+
+/* mature content gets blurred when nsfw toggle is off */
+.gallery-item.mature img { filter: blur(18px); }
+
+.gallery-item.mature .mature-label {
+  position: absolute;
+  background: rgba(0,0,0,0.7);
+  color: #fff;
+  font-size: 11px;
+  padding: 2px 6px;
+  border-radius: 4px;
+  margin: 6px;
+}
+
+.gallery-item-wrap { position: relative; }
+
+/* used if we want to fully hide instead of blur, currently unused but kept just in case */
+.hidden-mature { display: none !important; }
+
+/* ===== lightbox (clicking an image to view it bigger) ===== */
+.lightbox {
+  display: none;
+  position: fixed;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: rgba(0,0,0,0.85);
+  z-index: 999;
+  align-items: center;
+  justify-content: center;
+  cursor: zoom-out;
+}
+
+.lightbox.active { display: flex; }
+.lightbox img { max-width: 90%; max-height: 90%; border-radius: 4px; }
+
+/* ===== blog page ===== */
+.blog-page { padding: 40px; max-width: 700px; margin: 0 auto; }
+.blog-post { border-bottom: 1px solid #e5e3df; padding: 24px 0; }
+.blog-post:last-child { border-bottom: none; }
+.blog-post .date { font-size: 13px; color: #999; font-family: monospace; }
+.blog-post h2 { font-size: 20px; margin: 6px 0; }
+.blog-post img { max-width: 100%; border-radius: 6px; margin-top: 10px; }
+
+/* ===== commissions pricing block ===== */
+.commission-info {
+  background: #f7f7f5;
+  border: 1px solid #e5e3df;
+  border-radius: 8px;
+  padding: 20px;
+  margin-bottom: 30px;
+}
+
+.commission-info h2 { font-size: 18px; margin-bottom: 10px; }
+
+.price-table { width: 100%; border-collapse: collapse; margin-top: 10px; }
+.price-table td, .price-table th { border: 1px solid #e5e3df; padding: 8px 10px; text-align: left; font-size: 14px; }
+.price-table th { background: #fff; }
+
+/* ===== footer ===== */
+.footer { text-align: center; padding: 30px; border-top: 1px solid #e5e3df; font-size: 13px; color: #999; }
+.footer a { color: #FF6B4A; font-weight: 600; }
+
+/* social links row under the ko-fi link */
+.footer-socials {
+  margin-top: 8px;
+}
+
+.footer-socials a {
+  color: #999;
+  font-weight: 500;
+  margin: 0 4px;
+}
+
+.footer-socials a:hover {
+  color: #FF6B4A;
+}
+
+/* ===== mobile tweaks ===== */
+@media (max-width: 700px) {
+  .category-tiles { grid-template-columns: 1fr; }
+  .topbar { flex-direction: column; align-items: flex-start; }
+  .mainnav { flex-wrap: wrap; gap: 14px; }
+}
