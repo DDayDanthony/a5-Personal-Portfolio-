@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Commissions - My Portfolio</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+</head>
+<body data-gallery="commissions">
+
+  <header class="topbar">
+    <div class="logo"><a href="index.html">YOUR NAME HERE</a></div>
+    <nav class="mainnav">
+      <a href="original.html">Original Art</a>
+      <a href="fanart.html">Fan Art</a>
+      <a href="commissions.html">Commissions</a>
+      <a href="blog.html">Blog</a>
+      <a href="https://ko-fi.com/danthonydraws" target="_blank" class="kofi-link">Ko-fi ☕</a>
+    </nav>
+    <div class="nsfw-toggle">
+      <label><input type="checkbox" id="nsfwToggle"> Show mature content</label>
+    </div>
+  </header>
+
+  <section class="gallery-page">
+    <h1>Commissions</h1>
+    <p class="desc">Examples of past commission work. See below for pricing and info.</p>
+
+    <!-- pricing table - edit prices/rows directly here when they change -->
+    <div class="commission-info">
+      <h2>Pricing & Info</h2>
+      <table class="price-table">
+        <tr><th>Type</th><th>Price</th><th>Notes</th></tr>
+        <tr><td>Sketch (1 character)</td><td>$20</td><td>Rough lineart, no color</td></tr>
+        <tr><td>Flat Color (1 character)</td><td>$40</td><td>Lineart + flat colors</td></tr>
+        <tr><td>Full Render (1 character)</td><td>$80</td><td>Full shading + background extra</td></tr>
+        <tr><td>Extra Character</td><td>+$15</td><td>Added to base price</td></tr>
+        <tr><td>Simple Background</td><td>+$10</td><td>Flat color or gradient bg</td></tr>
+        <tr><td>Detailed Background</td><td>+$25</td><td>depends on complexity, ask first</td></tr>
+      </table>
+      <p style="margin-top:14px; font-size: 14px; color: #555;">
+        To commission me, message me on
+        <a href="https://ko-fi.com/danthonydraws" target="_blank" style="color:#FF6B4A; font-weight:600;">Ko-fi</a>
+        or [your contact method here]. Slots open/closed status: <strong>OPEN</strong>
+        <!-- TODO: update OPEN/CLOSED manually when slots fill -->
+      </p>
+    </div>
+
+    <div class="gallery-grid" id="galleryGrid">
+      <p>Loading...</p>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <p>&copy; 2026 Your Name. Made with too much coffee.</p>
+    <p><a href="https://ko-fi.com/danthonydraws" target="_blank">Support me on Ko-fi!</a></p>
+    <p class="footer-socials">
+      <a href="https://x.com/Danthonydraws" target="_blank">Twitter/X</a> ·
+      <a href="https://www.instagram.com/danthonydraws/" target="_blank">Instagram (Original Art)</a> ·
+      <a href="https://www.instagram.com/fanthonydraws/" target="_blank">Instagram (Fan Art)</a>
+    </p>
+  </footer>
+
+  <div class="lightbox" id="lightbox" onclick="closeLightbox()">
+    <img id="lightboxImg" src="" alt="">
+  </div>
+
+  <script src="js/config.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>
