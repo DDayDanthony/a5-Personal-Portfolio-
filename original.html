@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Original Art - My Portfolio</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+</head>
+<!-- data-gallery tells main.js which sheet tab to load -->
+<body data-gallery="original">
+
+  <header class="topbar">
+    <div class="logo"><a href="index.html">DanthonyDraws</a></div>
+    <nav class="mainnav">
+      <a href="original.html">Original Art</a>
+      <a href="fanart.html">Fan Art</a>
+      <a href="commissions.html">Commissions</a>
+      <a href="blog.html">Blog</a>
+      <a href="https://ko-fi.com/danthonydraws" target="_blank" class="kofi-link">Ko-fi ☕</a>
+    </nav>
+    <div class="nsfw-toggle">
+      <label><input type="checkbox" id="nsfwToggle"> Show mature content</label>
+    </div>
+  </header>
+
+  <section class="gallery-page">
+    <h1>Original Art</h1>
+    <p class="desc">Original characters, sketches, paintings, whatever I feel like making.</p>
+    <!-- gallery items get inserted here by js -->
+    <div class="gallery-grid" id="galleryGrid">
+      <p>Loading...</p>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <p>&copy; 2026 DanthonyDraws. Made with too much coffee.</p>
+    <p><a href="https://ko-fi.com/danthonydraws" target="_blank">Support me on Ko-fi!</a></p>
+    <p class="footer-socials">
+      <a href="https://x.com/Danthonydraws" target="_blank">Twitter/X</a> ·
+      <a href="https://www.instagram.com/danthonydraws/" target="_blank">Instagram (Original Art)</a> ·
+      <a href="https://www.instagram.com/fanthonydraws/" target="_blank">Instagram (Fan Art)</a>
+    </p>
+  </footer>
+
+  <div class="lightbox" id="lightbox" onclick="closeLightbox()">
+    <img id="lightboxImg" src="" alt="">
+  </div>
+
+  <script src="js/config.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>
