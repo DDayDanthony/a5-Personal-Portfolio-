@@ -245,9 +245,38 @@ async function buildBlog() {
   });
 }
 
+// builds the blog preview on the homepage, shows 3 most recent posts
+async function buildBlogPreview() {
+  const container = document.getElementById("blogPreview");
+  if (!container) return;
+
+  const data = await loadSheet(SHEET_URLS.blog);
+  container.innerHTML = "";
+
+  if (data.length === 0) {
+    container.innerHTML = "<p>No posts yet.</p>";
+    return;
+  }
+
+  // show only the 3 most recent posts
+  const recent = [...data].reverse().slice(0, 3);
+
+  recent.forEach(post => {
+    const div = document.createElement("div");
+    div.className = "blog-post-preview";
+    div.innerHTML = `
+      <div class="date">${post.date || ""}</div>
+      <h3>${post.title || "Untitled"}</h3>
+      <p>${post.content || ""}</p>
+    `;
+    container.appendChild(div);
+  });
+}
+
 // ===== run everything on page load =====
 buildCarousel();
 buildBlog();
+buildBlogPreview();
 
 // only build a gallery if this page has a gallery grid
 const grid = document.getElementById("galleryGrid");
